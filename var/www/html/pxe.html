@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!--<link rel="stylesheet" type="text/css" href="resources/css/jquery-ui.css">-->
+	<link href="https://fonts.googleapis.com/css?family=Paytone+One" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" href="resources/css/pxe.css">
+	<meta charset="utf-8">
+	<title>PXE Frontend</title>
+	<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+			integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+		crossorigin="anonymous">
+	</script>
+	<script src="resources/js/jquery.inputmask.bundle.js"></script>
+	<!--<script src="https://code.jquery.com/color/jquery.color-2.1.2.min.js"
+		    integrity="sha256-H28SdxWrZ387Ldn0qogCzFiUDDxfPiNIyJX7BECQkDE="
+	    crossorigin="anonymous">
+	</script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+		    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+	    crossorigin="anonymous">
+	</script> -->
+	<script src="resources/js/pxe.js"></script>
+</head>
+
+<body>
+	<div id="outerBox">
+		<div id="headerBar">
+			PXE Payload Editor
+			<div id="fullSpacer"></div>
+			<img src="resources/img/logo.svg" alt="Logo" height="64">
+		</div>
+		<div id="mainBox">
+			<div id="leftColumn">
+				<div class="remove payload">
+					<div class="leftTriangle"></div>
+				</div>
+				<div class="newLoad selectedPayload"><div class="selectedTriangle"></div>
+					New Payload
+				</div>
+			</div>
+			<div id="centerColumn">
+				<form id="payloadForm">
+					Server Name
+					<input type="text" name="name" size="14">
+					Profile
+					<div class="formRow">
+						<select id="profileMenu" name="profile">
+							<option class="yesIP" value="centos7" selected="selected">CentOS 7 Auto-install</option>
+							<option class="noIP" value="recovery">CentOS 7 Recovery</option>
+							<option class="noIP" value="forcefsck">Forcefsck</option>
+						</select>
+					</div>
+					Status
+					<div class="formRow">
+						<input type="radio" name="netboot-enabled" value="true" checked="checked">Live
+						<input type="radio" name="netboot-enabled" value="false">Dormant
+					</div>
+					<div class="formRow">
+						<div class="formCol">
+							Frontlan IP
+							<input class="ipInfo" type="text" name="IP" size="12">
+						</div>
+						<div class="formCol">
+							Netmask
+							<input class="ipInfo" type="text" name="netmask" size="12">
+						</div>
+						<div class="formCol">
+							Gateway
+							<input class="ipInfo" type="text" name="gateway" size="7">
+						</div>
+					</div>
+					<div class="formRow">
+						<div class="formCol">
+							Frontlan Interface
+							<input class="ipInfo" type="text" name="interface" size="14">
+						</div>
+						<div class="formCol">
+							Backlan MAC
+							<input type="text" name="mac" size="14">
+						</div>
+					</div>
+					Options
+					<div class="formRow">
+						<input class="ipInfo" type="checkbox" name="install_option" value="vanilla">Vanilla Ice
+						<input class="ipInfo" type="checkbox" name="swraid" value="true">Software RAID
+						<input class="ipInfo" type="checkbox" name="gpt" value="true">GPT
+					</div>
+				</form>
+			</div>
+			<div id="rightColumn">
+				<div class="finalSelection" id="submitButton">
+					Submit
+				</div>
+				<div class="finalSelection" id="deleteButton">
+					Delete
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

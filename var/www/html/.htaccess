@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "Go for PXE!"
+AuthUserFile /var/www/secureinclude/.htpasswd
+require valid-user
